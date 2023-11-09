@@ -1,4 +1,3 @@
-
 // FAZENDO UMA FUNÇÃO PARA CONECTAR NO BANCO DE DADOS - MONGODB
 import mongoose from "mongoose"
 
