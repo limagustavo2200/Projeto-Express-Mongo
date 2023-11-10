@@ -69,6 +69,4 @@ class LivroController {
 }
 
 
-
-
 export default LivroController
