@@ -2,9 +2,10 @@ import express from 'express'
 import conectaNaDataBase from './config/dbConnect.js'
 import routes from './routes/index.js'
 
-// CONECTANDO A APLICAÇÃO NO BANCO DE DADOS
+// Chamando a função para conectar ao banco de dados
 const conexao = await conectaNaDataBase()
 
+//Verificando erro ao conectar no banco de dados
 conexao.on('Error', (erro) => {
     console.error('Erro de conexao', erro)
 })

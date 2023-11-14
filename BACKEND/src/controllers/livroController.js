@@ -1,7 +1,8 @@
 import { autor } from "../models/Autor.js"
 import livro from "../models/Livro.js"
+//Controller dos livros
 
-
+//Função para exibir os livros
 class LivroController {
     static async listarLivros (req, res) {
         try{
@@ -12,7 +13,7 @@ class LivroController {
             res.status(500).json({ message: `${erro.message} - FALHA NA REQUISIÇÃO`})
         }
     }
-
+//Função para exibir um livro por id
     static async listarLivroPorId (req, res) {
         try{
             const id = req.params.id
@@ -24,6 +25,7 @@ class LivroController {
         }
     }
 
+//Função para cadastrar um livro
     static async cadastrarLivro(req, res){
         const novoLivro = req.body
         try{
@@ -37,6 +39,7 @@ class LivroController {
         }
     }
 
+//Função para atulizar um livro
     static async atualizarLivro (req, res) {
         try{
             const id = req.params.id
@@ -48,6 +51,7 @@ class LivroController {
         }
     }
 
+//Função para excluir um livro
     static async excluirLivro (req, res) {
         try{
             const id = req.params.id
@@ -59,6 +63,7 @@ class LivroController {
         }
     }
 
+//Função para listar os livros por Editora
     static async listarLivrosPorEditora (req, res) {
         const editora = req.query.editora
         try{

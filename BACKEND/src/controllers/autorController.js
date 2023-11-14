@@ -1,5 +1,7 @@
 import { autor } from "../models/Autor.js"
+//Controller dos autores 
 
+//função para listar os autores 
 class AutorController {
     static async listarAutores (req, res) {
         try{
@@ -11,6 +13,7 @@ class AutorController {
         }
     }
 
+//função para listar os autores por id
     static async listarAutorPorId (req, res) {
         try{
             const id = req.params.id
@@ -22,6 +25,7 @@ class AutorController {
         }
     }
 
+//função para cadastrar novos autores
     static async cadastrarAutor(req, res){
         try{
             const novoAutor = await autor.create(req.body)
@@ -31,7 +35,7 @@ class AutorController {
             res.status(500).json({ message: `${erro.message} - FLAHA AO CADASTRAR AUTOR ` })
         }
     }
-
+//função para atualizar o cadastro de algum autor
     static async atualizarAutor (req, res) {
         try{
             const id = req.params.id
@@ -43,6 +47,7 @@ class AutorController {
         }
     }
 
+// função para excluir algum autor
     static async excluirAutor (req, res) {
         try{
             const id = req.params.id
